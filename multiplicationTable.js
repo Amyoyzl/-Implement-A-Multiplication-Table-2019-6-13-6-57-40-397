@@ -1,9 +1,16 @@
 function getMultipicationTable(start, end) {
-    var result = "";
+    var multipicationTable = "";
     if (!isValid(start, end))
         return null;
-    else
-        return result;
+    else {
+        for (let i = start; i <= end; i++) {
+            for (let j = start; j <= i; j++) {
+                multipicationTable += `${j}*${i}=${i*j}\t`;
+            }
+            multipicationTable += "\n";
+        }
+        return multipicationTable;
+    }
 }
 
 function isValid(start, end) {
@@ -11,7 +18,6 @@ function isValid(start, end) {
         return true;
     else
         return false;
-
 }
 
 module.exports = {
